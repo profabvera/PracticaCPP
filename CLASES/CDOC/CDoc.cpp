@@ -2,8 +2,8 @@
 #include <string>
 
 CDoc::CDoc(){
-   tipo="DNI";
-   numero="00.000.000";
+   tipo = "DNI";
+   numero = "00.000.000";
 }
 CDoc::CDoc(std::string tip_in, std::string num_in){
    tipo=tip_in;
