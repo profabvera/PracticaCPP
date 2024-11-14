@@ -13,7 +13,7 @@ CDoc::CDoc(const CDoc & d){
    tipo=d.tipo;
    numero=d.numero;
 }
-CDoc::~CDoc(){};
+CDoc::~CDoc(){ }
 
 void CDoc::setTipo(std::string tip_in){
    tipo=tip_in;
@@ -27,4 +27,13 @@ std::string CDoc::getTipo()const {
 std::string CDoc::getNumero()const {
    return numero;
 }
+std::string CDoc::toString(){
+   std::stringstream s;
+   s<<tipo << " "<< numero ;
+   return s.str();
+}
+
+
+
+
 

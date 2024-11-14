@@ -1,7 +1,7 @@
 #ifndef CDOC_H
 #define CDOC_H
 #include <string>
-
+#include <sstream>
 
 class CDoc {
 private:
@@ -17,5 +17,6 @@ public:
    void setNumero(std::string num_in);
    std::string getTipo()const;
    std::string getNumero()const;
+   std::string toString();
 };
 #endif // CDOC_H
