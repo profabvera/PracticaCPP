@@ -1,0 +1,358 @@
+\documentclass[a4paper,oneside,10pt]{article}%{scrartcl}
+\usepackage{latexsym}
+\pagestyle{headings}
+\usepackage[dvips]{graphicx}
+\usepackage[dvips]{color}
+%\usepackage[activeacute,english,spanish]{babel}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{yhmath} %No funciona para las raices
+\usepackage[latin1]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amstext}
+\usepackage{pstricks}
+\usepackage {amssymb}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{fancybox}
+
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+%\usepackage{dataTable} %Crear Archivo sty. Ver Latex
+
+
+
+%\usepackage{color}
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0cm,
+     framesep=0pt,
+     rulesep=.0pt, %rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\small\ttfamily,
+     commentstyle=\color{gray45},
+     keywordstyle=\bfseries,
+     %
+     numbers=left,
+     numbersep=15pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+
+\usepackage{lipsum}
+\usepackage{tikz,tkz-tab} %
+\usetikzlibrary{matrix,arrows, positioning,shadows,shadings,backgrounds,
+calc, shapes, tikzmark}
+\usepackage{tcolorbox, empheq} 
+\tcbuselibrary{skins,breakable,listings,theorems}
+
+
+\usepackage{array,tabularx}
+\usepackage{colortbl}
+
+\usepackage{varwidth}
+
+\usepackage{xcolor}
+
+\usepackage{multirow}
+
+
+\usepackage{lastpage}
+\addtolength{\headwidth}{\marginparwidth}
+\addtolength{\headwidth}{\marginparsep}
+\fancypagestyle{plain}% Para la primera página
+% Para el resto de páginas
+\lhead{}
+\chead{}
+\rhead{\bfseries Mi Sal\'on de Clases - \color{blue!60!white} \emph{Matem\'atica} \color{black}  \quad }
+\renewcommand{\headrulewidth}{0.5pt}
+\lfoot{\scriptsize \qquad \textit{Prof.:Armando. B. VERA}\qquad \normalsize}
+\cfoot{\scriptsize profabvera@gmail.com\normalsize}
+\rfoot{\scriptsize \thepage/\pageref{LastPage} \qquad \  \normalsize}
+\renewcommand{\footrulewidth}{0.2pt}
+%\geometry{left=3.5cm, right=2.3cm, top=3.5cm, bottom=2.5cm}
+\geometry{left=2.6cm, right=2.4cm, top=2.0cm, bottom=2.5cm}
+\usepackage{tikz}
+%\setlength{\fboxrule}{1 pt} \setlength{\fboxsep}{8pt}
+\setlength{\shadowsize}{2pt}
+\usepackage{url}
+
+
+
+\usepackage{polynom}
+\usepackage{cancel}
+
+\author{Prof. en Matem\'atica e Inform\'atica \\ Armando B. VERA}
+\title{}
+
+
+\newtcolorbox{mybox}[2][drop fuzzy shadow=green!40!black]{enhanced,
+before skip=2mm,after skip=2mm,
+colback=black!5,colframe=black!50,boxrule=0.2mm,
+attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=blue!60!green]  %fill=tcbcolback!30!black
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[
+left color=blue!50!green,
+right color=blue!50!green,
+middle color=blue!50!green,
+]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},
+fonttitle=\bfseries,
+title={#2},#1}
+
+% ---------------
+\newtcolorbox{mbRta}[2][]{enhanced,
+before skip=2mm,after skip=2mm,
+colback=black!5,colframe=black!50,boxrule=0.2mm,
+attach boxed title to top left={xshift=1cm,yshift*=1mm-\tcboxedtitleheight},
+varwidth boxed title*=-3cm,
+boxed title style={frame code={
+\path[fill=blue!60!brown]  %fill=tcbcolback!30!black
+([yshift=-1mm,xshift=-1mm]frame.north west)
+arc[start angle=0,end angle=180,radius=1mm]
+([yshift=-1mm,xshift=1mm]frame.north east)
+arc[start angle=180,end angle=0,radius=1mm];
+\path[
+left color=blue!50!brown,
+right color=blue!50!brown,
+middle color=blue!50!brown,
+]
+([xshift=-2mm]frame.north west) -- ([xshift=2mm]frame.north east)
+[rounded corners=1mm]-- ([xshift=1mm,yshift=-1mm]frame.north east)
+-- (frame.south east) -- (frame.south west)
+-- ([xshift=-1mm,yshift=-1mm]frame.north west)
+[sharp corners]-- cycle;
+},interior engine=empty,
+},
+fonttitle=\bfseries,
+title={#2},#1}
+
+%---------------
+\newtcolorbox{concepto} [2][]{enhanced,
+colframe=green!45!black,colback=green!5!white,
+arc=1mm,colbacktitle=green!5!white,
+fonttitle=\bfseries,coltitle=green!30!black,
+attach boxed title to top left=
+{xshift=3.2mm,yshift=-0.50mm},
+boxed title style={skin=enhancedfirst jigsaw,
+size=small,arc=1mm,bottom=-1mm,
+interior style={fill=none,
+top color=green!30!white,
+bottom color=green!20!white}}, drop fuzzy shadow=green!40!black,
+fonttitle=\bfseries,
+title={#2},}
+
+%---------------
+
+
+% \usepackage{varwidth}
+\newtcolorbox{mbEjer}[2][drop fuzzy shadow=green!20!black]{enhanced,skin=enhancedlast jigsaw,
+attach boxed title to top left={xshift=-4mm,yshift=-0.5mm},
+fonttitle=\bfseries\sffamily,varwidth boxed title=0.7\linewidth,
+colbacktitle=green!50!white,colframe=green!15!black,
+interior style={top color=blue!10!white,bottom color=green!10!white},
+boxed title style={empty,arc=0pt,outer arc=0pt,boxrule=0pt},
+underlay boxed title={
+\fill[blue!50!green] (title.north west) -- (title.north east) %blue!45!white
+-- +(\tcboxedtitleheight-1mm,-\tcboxedtitleheight+1mm)
+-- ([xshift=4mm,yshift=0.5mm]frame.north east) -- +(0mm,-1mm)
+-- (title.south west) -- cycle;
+\fill[blue!45!green!50!black] ([yshift=-0.5mm]frame.north west)
+-- +(-0.4,0) -- +(0,-0.3) -- cycle;
+\fill[blue!50!green!50!black] ([yshift=-0.5mm]frame.north east)
+-- +(0,-0.3) -- +(0.4,0) -- cycle; },
+title={#2},#1}
+
+
+\newtcolorbox{cuadro}{enhanced, colframe=green!45!black,colback=green!5!white,
+arc=1mm,colbacktitle=green!5!white,
+fonttitle=\bfseries,coltitle=green!30!black,
+attach boxed title to top left=
+{xshift=3.2mm,yshift=-0.50mm},
+boxed title style={skin=enhancedfirst jigsaw,
+size=small,arc=1mm,bottom=-1mm,
+interior style={fill=none,
+top color=green!30!white,
+bottom color=green!20!white}}, drop fuzzy shadow=green!40!black,
+}
+
+%----------------Caja Con Titulo
+\newtcolorbox{cajaConTitulo}[2][drop fuzzy shadow=green!40!black]{enhanced jigsaw,
+opacityframe=0.5,
+opacityback=0.25,             %opacityback=0.95,
+opacitybacktitle=0.75, 		%opacitybacktitle=0.95,
+opacitytext=0.95,			%opacitytext=0.8,
+before skip=2mm,after skip=2mm,
+%colback=black!15,
+colback=green!5,
+%colframe=black!50,
+colframe=green!50,
+boxrule=0.2mm,
+colbacktitle=blue!50!green,
+fonttitle=\bfseries,
+title={#2},#1}
+%---------------fin Caja Con Titulo
+%------
+%----------------Caja Con Titulo Verde
+\newtcolorbox{cajaCTV}[2][drop fuzzy shadow=green!40!black]{enhanced jigsaw,opacityframe=0.5,
+opacityback=0.95,
+opacitybacktitle=0.95,
+opacitytext=0.8,
+before skip=2mm,after skip=2mm,
+%colback=black!15,
+colback=green!5,
+%colframe=black!50,
+colframe=green!50,
+boxrule=0.2mm,
+colbacktitle=blue!50!green,
+fonttitle=\bfseries,
+title={#2},#1}
+%---------------fin Caja Con Titulo Verde
+
+
+
+%----------------Caja Con Titulo Azul
+\newtcolorbox{cajaCTA}[2][drop fuzzy shadow=blue!60!black]{enhanced jigsaw,opacityframe=0.5,
+opacityback=0.95,
+opacitybacktitle=0.95,
+opacitytext=0.8,
+before skip=2mm,after skip=2mm,
+%colback=black!15,
+colback=blue!15,
+%colframe=black!50,
+colframe=black!50,
+boxrule=0.2mm,
+colbacktitle=blue!90!white,
+fonttitle=\bfseries,
+title={#2},#1}
+%---------------fin Caja Con Titulo Naranja
+
+\newtcolorbox{cajaCTN}[2][drop fuzzy shadow=orange!80!black]{enhanced jigsaw,opacityframe=0.5,
+opacityback=0.95,
+opacitybacktitle=0.95,
+opacitytext=0.8,
+before skip=2mm,after skip=2mm,
+%colback=black!15,
+colback=orange!35,
+%colframe=black!50,
+colframe=black!50,
+boxrule=0.2mm,
+colbacktitle=orange!90!black,
+fonttitle=\bfseries,
+title={#2},#1}
+%---------------fin Caja Con Titulo Naranja
+
+
+
+
+\begin{document}
+\begin{flushright}
+\tcbox[tikznode,halign upper=right]
+{Espacio Curricular: Matem\'atica \\
+Profesor: \texttt{Armando B. VERA} \\
+Curso: \\
+Tema: L\'ogicas booleanas \\
+}
+\end{flushright}
+
+\begin{mbRta}{Tabla de Verdad}
+
+Regla para determinar si un a\~no es bisiesto
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+Divisible por 4 & Divisible por 4 y por 100 & Divisible por 400 & Salida \\
+\hline 
+v & v & v & v \\
+\hline
+v & v & f & f \\
+\hline
+v & f &  & v \\
+\hline
+f & & & f \\
+\hline
+\end{tabular}
+
+
+\begin{tabular}{|c|c|c|c|}
+\hline
+  &  &  & S \\
+\hline 
+v & v & v & v \\
+\hline
+v & v & f & f \\
+\hline
+v & f &  & v \\
+\hline
+f & & & f \\
+\hline
+\end{tabular}
+
+?`De cu\'antas formas podemos verificar si un a\~no es bisiesto?
+Vemos que un a\~no es bisiesto si es m\'ultiplo de 4 (la primera condici\'on), pero hay otras dos condiciones, no debe ser m\'ultiplo de 100 con una excepci\'on, si es m\'ultiplo de 400.
+
+
+\begin{cajaCTN}{}
+\begin{lstlisting}[language=C++]
+
+bool bisiesto(a){
+  bool bis=false;
+  if(a%4==0){
+    if(a%100!=0 || a%400){
+    bis=true;
+  }
+  return bis;
+}
+    
+\end{lstlisting}
+\end{cajaCTN}
+El misco efecto lo podemos lograr con un solo \texttt{if}.
+
+\begin{cajaCTN}{}
+\begin{lstlisting}[language=C++]
+bool bisiesto(a){
+  bool bis=false;
+  if(a%4==0 && (a%100!=0 || a%400){
+    bis=true;
+  }
+  return bis;
+}
+\end{lstlisting}
+\end{cajaCTN}
+ 
+\end{mbRta}
+
+\Huge
+$$ \phi $$
+
+\normalsize
+
+
+\end{document}
