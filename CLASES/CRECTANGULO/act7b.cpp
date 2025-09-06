@@ -15,7 +15,6 @@ int main() {
 
 	float base=0.0;
 	float altura=0.0;
-	int numV=0;
 	CRectangulo paredLat;
 	CRectangulo paredFre;
 	CRectangulo ventana;
