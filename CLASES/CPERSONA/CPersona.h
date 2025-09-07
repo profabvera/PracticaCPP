@@ -35,10 +35,11 @@ class CPersona {
 	   std::string getGenero() const;
 	   std::string getDni() const;
 	   CFecha getFDNac()const;
+	   std::string toString();
 	   CPersona& operator=(const CPersona& p);
 	   friend std::ostream& operator<<(const std::ostream& pout, const CPersona& p);
+	   
 //	   friend std::istream& operator>>(std::istream& pin, CPersona & p);
-
 };
 
 #endif // CPERSONA_H

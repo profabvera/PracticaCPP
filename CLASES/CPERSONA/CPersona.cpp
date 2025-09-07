@@ -59,6 +59,18 @@ std::string CPersona::getDni() const{
 CFecha CPersona::getFDNac()const{
    return fDNac;
 }
+
+std::string CPersona::toString(){
+	std::stringstream s;
+	s << "\t -- Datos Personales --" << std::endl;
+	s << "\tNombre:-----:" << nombre << std::endl;
+	s << "\tApellido----: " << apellido << std::endl;
+	s << "\tGenero------: " << genero << std::endl;
+	s << "\tDNI --------: " << dni << std::endl;
+	s << "\tFecha de Nac: " << fDNac << std::endl;
+	return s.str();
+}
+
 CPersona& CPersona::operator=(const CPersona& p){
    nombre=p.nombre;
    apellido=p.apellido;
@@ -66,6 +78,7 @@ CPersona& CPersona::operator=(const CPersona& p){
    dni=p.dni;
    fDNac=p.fDNac;
 }
+
 std::ostream& operator<<(const std::ostream& pout, const CPersona& p){
    pout << "--Datos Personales--"<<std::endl;
    pout << "Nombre------:" << p.nombre << std::endl;
