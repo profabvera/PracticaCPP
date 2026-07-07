@@ -1,3 +1,5 @@
+## Prueba de código Mermaid
+
 ```mermaid
 classDiagram
 
