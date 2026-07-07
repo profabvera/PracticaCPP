@@ -5,8 +5,8 @@ classDiagram
 
 class CPersona {
 
-   +nombre
-   +seNombre(std::string nom)
+   +std::string nombre;
+   +seNombre(std::string nom);
    }
 
 ```
